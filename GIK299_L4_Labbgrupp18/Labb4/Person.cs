@@ -17,39 +17,39 @@ namespace Labb4
 
     internal class Person
     {
-        Gender Gender;
-        Hair Hair;
-        DateTime BirthDay;
-        Color EyeColor;
+        Gender gender;
+        Hair hair;
+        DateTime birthDay;
+        Color eyeColor;
 
-        public Person( Gender gender, Hair hair, DateTime birthDate, Color eyeColor )
+        public Person( Gender gender, Hair hair, DateTime birthDay, Color eyeColor )
         {
-            Gender = gender;
-            Hair = hair;
-            BirthDay = birthDate;
-            EyeColor = eyeColor;
+            this.gender = gender;
+            this.hair = hair;
+            this.birthDay = birthDay;
+            this.eyeColor = eyeColor;
         }
 
         public string GetData()
         {
             return
-                Gender.ToString() + "," +
-                Hair.HairLength.ToString() + "," +
-                Hair.HairColor.ToString() + "," +
-                BirthDay.ToString() + "," +
-                EyeColor.ToString();
+                gender.ToString() + "," +
+                hair.hairLength.ToString() + "," +
+                hair.hairColor.ToString() + "," +
+                birthDay.ToString() + "," +
+                eyeColor.ToString();
         }
     }
 
     struct Hair
     {
-        public float HairLength;
-        public Color HairColor;
+        public float hairLength;
+        public Color hairColor;
 
         public Hair( float hairLength, Color hairColor )
         {
-            HairLength = hairLength;
-            HairColor = hairColor;
+            this.hairLength = hairLength;
+            this.hairColor = hairColor;
         }
     }
 }
