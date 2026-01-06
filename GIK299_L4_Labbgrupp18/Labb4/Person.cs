@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Labb4
 {
+    // Enum för att representera kön
     enum Gender
     {
         woman,
@@ -15,14 +16,17 @@ namespace Labb4
         other
     }
 
+    // Klass som beskriver en person
     internal class Person
     {
+
         Gender gender;
         Hair hair;
         DateTime birthDay;
         Color eyeColor;
 
-        public Person( Gender gender, Hair hair, DateTime birthDay, Color eyeColor )
+        // Konstruktor för att skapa en person
+        public Person(Gender gender, Hair hair, DateTime birthDay, Color eyeColor)
         {
             this.gender = gender;
             this.hair = hair;
@@ -30,23 +34,33 @@ namespace Labb4
             this.eyeColor = eyeColor;
         }
 
+        // Returnerar en strängrepresentation av personen
+        public override string ToString()
+        {
+            return GetData();
+        }
+
+        // Returnerar personens data som en kommaseparerad sträng
         public string GetData()
         {
+
             return
-                gender.ToString() + "," +
-                hair.hairLength.ToString() + "," +
-                hair.hairColor.ToString() + "," +
-                birthDay.ToString() + "," +
-                eyeColor.ToString();
+                "\nGender: " + gender.ToString() +
+                "\nHair length: " + hair.hairLength.ToString() + "cm " +
+                "\nHair color : " + hair.hairColor.Name.ToLower() +
+                "\nBirth date: " + birthDay.ToString("yyyy-MM-dd") +
+                "\nEye color: " + eyeColor.Name.ToLower();  // Hämtar ögonfärgens namn för snyggare utskrift: "red" istället för "Color [Red]".
         }
     }
 
+    // Struct som beskriver hår
     struct Hair
     {
         public float hairLength;
         public Color hairColor;
 
-        public Hair( float hairLength, Color hairColor )
+        // Konstruktor för hår
+        public Hair(float hairLength, Color hairColor)
         {
             this.hairLength = hairLength;
             this.hairColor = hairColor;
