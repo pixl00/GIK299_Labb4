@@ -20,18 +20,18 @@ namespace Labb4
     internal class Person
     {
 
-        Gender gender;
-        Hair hair;
-        DateTime birthDay;
-        Color eyeColor;
+        Gender Gender;
+        Hair Hair;
+        DateTime BirthDay;
+        Color EyeColor;
 
         // Konstruktor för att skapa en person
         public Person(Gender gender, Hair hair, DateTime birthDay, Color eyeColor)
         {
-            this.gender = gender;
-            this.hair = hair;
-            this.birthDay = birthDay;
-            this.eyeColor = eyeColor;
+            Gender = gender;
+            Hair = hair;
+            BirthDay = birthDay;
+            EyeColor = eyeColor;
         }
 
         // Returnerar en strängrepresentation av personen
@@ -45,25 +45,25 @@ namespace Labb4
         {
 
             return
-                "\nGender: " + gender.ToString() +
-                "\nHair length: " + hair.hairLength.ToString() + "cm " +
-                "\nHair color : " + hair.hairColor.Name.ToLower() +
-                "\nBirth date: " + birthDay.ToString("yyyy-MM-dd") +
-                "\nEye color: " + eyeColor.Name.ToLower();  // Hämtar ögonfärgens namn för snyggare utskrift: "red" istället för "Color [Red]".
+                "\nGender: " + Gender.ToString() +
+                "\nHair length: " + Hair.HairLength.ToString() + "cm " +
+                "\nHair color : " + Hair.HairColor.Name.ToLower() +
+                "\nBirth date: " + BirthDay.ToString("yyyy-MM-dd") +
+                "\nEye color: " + EyeColor.Name.ToLower();  // Hämtar ögonfärgens namn för snyggare utskrift: "red" istället för "Color [Red]".
         }
     }
 
     // Struct som beskriver hår
     struct Hair
     {
-        public float hairLength;
-        public Color hairColor;
+        public float HairLength;
+        public Color HairColor;
 
         // Konstruktor för hår
         public Hair(float hairLength, Color hairColor)
         {
-            this.hairLength = hairLength;
-            this.hairColor = hairColor;
+            HairLength = hairLength;
+            HairColor = hairColor;
         }
     }
 }
